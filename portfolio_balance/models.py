@@ -10,6 +10,9 @@ class Question(models.Model):
     ### notice we provided a human readable fieldname or 'date published',
     ### --- This is optional
     pub_date = models.DateTimeField('date published')
+    ### the below allows for returned string instead of integer rep
+    def __str__(self):
+        return self.question_text
 
 class Choice(models.Model):
     ### Models.Foreign_Key defines a relationship as in each choice is related
@@ -17,3 +20,5 @@ class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
+    def __str__(self):
+        return self.choice_text

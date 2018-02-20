@@ -27,5 +27,11 @@ Notes:
 8)	If you’d like to add fields, use models.py in app folder
 	a.	Add classes here with appropriate models.Model and charfield/datetimefield
 	b.	Use ForeignKey to determine focal point
-9)	Python manage.py makemigrations “name of app in apps.py”
 
+Remember:
+	•Change your models (in models.py).
+	•Run python manage.py makemigrations to create migrations for those changes
+	•Run python manage.py migrate to apply those changes to the database.
+
+Commandline:
+*** 
